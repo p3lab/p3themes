@@ -1,0 +1,25 @@
+Package: p3themes
+Title: Using P3 Theme For GGPLOT Objects 
+Version: 0.0.0.9000
+Authors@R: 
+   c(person(given = "Grace",
+           family = "Park",
+           role = c("aut")),
+     person(given = "Liz",
+           family = "McKenna",
+           role = c("aut")),      
+     person(given = "Jae Yeon",
+           family = "Kim",
+           role = c("aut", "cre"),
+           email = "jaeyeonkim2Berkeley.edu",
+           comment = c(ORCID = "0000-0002-6533-7910")))
+Description: This project provides a set of functions to apply p3theme to ggplot objects.
+Maintainer: Jae Yeon Kim <jaeyeonkim@berkeley.edu>
+BugReports: https://github.com/p3lab/p3themes/issues
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    ggplot2
