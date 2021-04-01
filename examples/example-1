@@ -11,7 +11,7 @@ library(RCurl)
 
 
 ## Import the sample dataframe
-x <- getURL("https://raw.githubusercontent.com/p3lab/p3themes/main/example-data/sample_dataset.csv")
+x <- getURL("https://raw.githubusercontent.com/p3lab/p3themes/main/examples/sample_dataset.csv")
 
 df<- read.csv(text = x)
 
