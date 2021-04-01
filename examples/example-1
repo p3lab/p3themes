@@ -1,0 +1,34 @@
+rm(list=ls())
+
+## Install the current development version from GitHub and load other relevant packages
+
+library(devtools)
+library(p3themes)
+library(ggplot2)
+library(tidyverse)
+library(tidyquant)
+library(RCurl)
+
+
+## Import the sample dataframe
+x <- getURL("https://raw.githubusercontent.com/p3lab/p3themes/main/example-data/sample_dataset.csv")
+
+df<- read.csv(text = x)
+
+# Relevel the experience variable to an order that makes sense
+df$experience2 = factor(df$experience, levels=c("I had some informal experience organizing, but lacked formal training.","I have been community organizing for less than 5 years with formal training.","I have been a community organizer for 5 or more years."))
+
+# The response is long/a lot of text so wrap it
+df$experience3 = str_wrap(df$experience2, width = 35)
+
+# Plot it without the P3 theme
+g <- ggplot(df, aes(experience3, fill=experience3)) + geom_bar() + theme_bw() + theme(legend.position = "none")
+g
+
+# Change labels and add title/substitle information
+g1 <- g + xlab("Count of responses") + 
+  ylab("Organizing experience") + 
+  labs(title = "What was your experience with community organizing prior to joining\nthe Census effort with Houston in Action?",
+                subtitle = "Organizer responses, n=8",
+                caption = "Data source: Houston in Action 2020 Post-Program Survey")
+g1
