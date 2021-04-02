@@ -16,7 +16,7 @@ add_p3theme <- function(ggplot_obj) {
     #ff914d - organizing orange
 
     ggplot_obj +
-        scale_fill_manual(values = c("#527aaf","#ff914d","#ffbd59"))
+        scale_fill_manual(values = c("#527aaf","#ff914d","#ffbd59")) +
         theme(text = element_text(
                         size = 12,
                         family = "Helvetica Neue"),
