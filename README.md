@@ -1,6 +1,6 @@
 # p3themes
 
-The goal of GetAboutPages is to ...
+This is a package to help standardize data viz produced by members of the P3 Lab when using ggplot. It is consistent with the P3 branding guidelines developed by Grace Park.
 
 ## Installation 
 
