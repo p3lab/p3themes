@@ -5,11 +5,14 @@ title: "Applying p3themes"
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  message = FALSE,
+  warning = FALSE
 )
 ```
 
 ```{r setup}
+
 if (!require("pacman")) install.packages("pacman")
 
 pacman::p_load(devtools, RCurl, ggplot2, tidyverse, tidyquant)
