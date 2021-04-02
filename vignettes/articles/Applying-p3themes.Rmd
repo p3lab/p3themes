@@ -1,0 +1,59 @@
+---
+title: "Applying p3themes"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+if (!require("pacman")) install.packages("pacman")
+
+pacman::p_load(devtools, RCurl, ggplot2, tidyverse, tidyquant)
+
+install_github("p3lab/p3themes", dependencies = TRUE)
+
+library(p3themes)
+```
+
+# Visualization 
+
+Plot it without the P3 theme
+
+```{r}
+df <- p3themes::df
+
+g <- ggplot(df, aes(experience2, fill = experience2)) + 
+    geom_bar() + 
+    theme_bw() + 
+    theme(legend.position = "none")
+
+g
+```
+
+Change labels and add title/substitle information
+
+```{r}
+g1 <- g + 
+  labs(x = "Count of responses",
+       y = "Organizing experience",
+       title = "What was your experience with community organizing prior to joining\nthe Census effort with Houston in Action?",
+       subtitle = "Organizer responses, n=8",
+       caption = "Data source: Houston in Action 2020 Post-Program Survey")
+
+g1
+```
+
+Now add the p3theme to the plot
+
+```{r}
+
+g2 <- add_p3theme(g1)
+
+g2
+```
+
+
