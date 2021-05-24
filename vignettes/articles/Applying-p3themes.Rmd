@@ -12,12 +12,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-
-if (!require("pacman")) install.packages("pacman")
-
-pacman::p_load(devtools, RCurl, ggplot2, tidyverse, tidyquant)
-
-pacman::p_install_gh("p3lab/p3themes", dependencies = TRUE)
+if (!require("ggplot2")) install.packages("ggplot2")
 
 library(p3themes)
 ```
