@@ -17,46 +17,71 @@ if (!require("pacman")) install.packages("pacman")
 
 pacman::p_load(devtools, RCurl, ggplot2, tidyverse, tidyquant)
 
-install_github("p3lab/p3themes", dependencies = TRUE)
+pacman::p_install_gh("p3lab/p3themes", dependencies = TRUE)
 
 library(p3themes)
 ```
 
 # Visualization 
 
+## Bar plot (fill aesthetic parameter)
+
 Plot it without the P3 theme
 
 ```{r}
 df <- p3themes::df
 
-g <- ggplot(df, aes(experience2, fill = experience2)) + 
+bar <- ggplot(df, aes(experience2, fill = experience2)) + 
     geom_bar() + 
     theme_bw() + 
     theme(legend.position = "none")
 
-g
+bar
 ```
 
-Change labels and add title/substitle information
+Change labels and add title/subtitle information
 
 ```{r}
-g1 <- g + 
+bar1 <- bar + 
   labs(x = "Count of responses",
        y = "Organizing experience",
        title = "What was your experience with community organizing prior to joining\nthe Census effort with Houston in Action?",
        subtitle = "Organizer responses, n=8",
        caption = "Data source: Houston in Action 2020 Post-Program Survey")
 
-g1
+bar1
 ```
 
 Now add the p3theme to the plot
 
 ```{r}
 
-g2 <- add_p3theme(g1)
+bar2 <- add_p3theme(bar1, target = "fill") # you can skip filling in target = "fill", because "fill" is the default value for the target argument.
 
-g2
+bar2
 ```
 
+## Line plot (color aesthetic parameter)
 
+Plot it without the P3 theme
+
+```{r}
+# Toy data
+df <- data.frame(period = rep(c(1:100), 2), 
+                 value = sample(c(1:50), 200, replace = TRUE), 
+                 group = rep(c("A", "B"), 100))
+
+line <- ggplot(df, aes(x = period, y = value, color = group)) + 
+    geom_line() + 
+    theme_bw() + 
+    theme(legend.position = "none")
+```
+
+Now add the p3theme to the plot
+
+```{r}
+
+line_p3 <- add_p3theme(line, target = "color")
+
+line_p3
+```

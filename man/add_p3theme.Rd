@@ -4,13 +4,15 @@
 \alias{add_p3theme}
 \title{Add p3 theme}
 \usage{
-add_p3theme(ggplot_obj)
+add_p3theme(ggplot_obj, target = "fill")
 }
 \arguments{
 \item{ggplot_obj}{A ggplot object}
+
+\item{target}{The aesthetic to which the p3 ggtheme will be applied. The default value is "fill." The other option is "color."}
 }
 \value{
-A ggplot object with p3 ggthemes
+A ggplot object with p3 ggtheme
 }
 \description{
 Add p3 theme
