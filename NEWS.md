@@ -1,3 +1,7 @@
+# p3themes 0.0.2
+
+* Added an argument to choose between fill and color aesthetic property.
+
 # p3themes 0.0.1
 
 * Added an example data and a quick demonstration.
