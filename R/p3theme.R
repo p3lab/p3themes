@@ -16,6 +16,10 @@ add_p3theme <- function(ggplot_obj, target = "fill") {
     #527aaf - fractal blue
     #ffbd59 - prism peach
     #ff914d - organizing orange
+    #034aa8 - p3 blue
+    #999999 - moon
+    #333333 - coal
+    
 
     base <- ggplot_obj +
         theme(text = element_text(
@@ -27,7 +31,7 @@ add_p3theme <- function(ggplot_obj, target = "fill") {
                         plot.title = element_text(face = "bold"),
                         legend.title = element_text(size = 11))
 
-    p3_theme <- c("#527aaf","#ff914d","#ffbd59")
+    p3_theme <- c("#527aaf",#999999", "#ff914d","#034aa8", "#ffbd59","#333333")
 
     if (target == "fill") {
         out <- base +
